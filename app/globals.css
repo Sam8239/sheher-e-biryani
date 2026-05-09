@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  /* Sheher-e-Biryani — Premium Heritage Palette */
+  --background: #FBF8F3;
+  --foreground: #1A1412;
+  --primary: #7B1F1F;
+  --primary-light: #9B3A3A;
+  --primary-foreground: #FBF8F3;
+  --accent: #D4A853;
+  --accent-light: #E8C97A;
+  --accent-foreground: #1A1412;
+  --surface: #F5EFE6;
+  --muted: #6B5C52;
+  --muted-foreground: #8A7B70;
+  --border: #E0D5C7;
+  --ring: #7B1F1F;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-surface: var(--surface);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --font-heading: var(--font-playfair);
+  --font-body: var(--font-playfair);
+  --font-sans: var(--font-playfair);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+body * {
+  font-family: var(--font-playfair), Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-light);
+}
+
+/* Selection */
+::selection {
+  background: var(--accent);
+  color: var(--foreground);
+}
