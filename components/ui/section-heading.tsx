@@ -7,6 +7,7 @@ interface SectionHeadingProps {
   badge: string;
   title: string;
   highlight?: string;
+  highlightOnNewLine?: boolean;
   description?: string;
   className?: string;
   centered?: boolean;
@@ -16,6 +17,7 @@ export function SectionHeading({
   badge,
   title,
   highlight,
+  highlightOnNewLine = false,
   description,
   className,
   centered = true,
@@ -37,6 +39,7 @@ export function SectionHeading({
       </span>
       <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground tracking-tight leading-tight">
         {title}{" "}
+        {highlight && highlightOnNewLine && <br />}
         {highlight && <span className="text-primary">{highlight}</span>}
       </h2>
       {description && (

@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
+import { SectionHeading } from "@/components/ui/section-heading";
 
 export function Story() {
   const shouldReduceMotion = useReducedMotion();
@@ -37,11 +38,11 @@ export function Story() {
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
             variants={fadeInLeft}
-            className="relative aspect-4/5 rounded-3xl overflow-hidden"
+            className="relative aspect-square rounded-4xl overflow-hidden border-l-6 border-primary"
           >
             <Image
-              src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=800&h=1000&fit=crop&q=80"
-              alt="Traditional biryani preparation with aromatic spices"
+              src="/matka-biryani-story.png"
+              alt="Authentic matka biryani in a traditional clay pot"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -69,15 +70,14 @@ export function Story() {
             variants={fadeInRight}
             className="space-y-6"
           >
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10 text-primary text-xs font-medium tracking-wider uppercase">
-              Our Story
-            </span>
-
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground tracking-tight leading-tight">
-              A Legacy of
-              <br />
-              <span className="text-primary">Flavour & Fire</span>
-            </h2>
+            <SectionHeading
+              badge="Our Story"
+              title="A Legacy of"
+              highlight="Flavour & Fire"
+              highlightOnNewLine
+              centered={false}
+              className="mb-0"
+            />
 
             <div className="space-y-4 text-muted leading-relaxed">
               <p>

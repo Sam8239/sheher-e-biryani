@@ -8,21 +8,35 @@ import Image from "next/image";
 import { navLinks } from "@/constants/navigation";
 import { SITE_NAME, ZOMATO_URL } from "@/constants/site";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const { scrollY } = useScroll();
   const shouldReduceMotion = useReducedMotion();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() ?? 0;
+    
+    // Hide/show logic
     if (latest > previous && latest > 150) {
       setHidden(true);
     } else {
       setHidden(false);
     }
+
+    // Color toggle logic
+    if (latest > 100) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
   });
+
+  const textColor = "text-white";
+  const logoInvert = "brightness-0 invert";
 
   return (
     <motion.header
@@ -36,10 +50,10 @@ export function Navbar() {
     >
       <div className="w-full max-w-7xl pointer-events-auto">
         <div 
-          className="bg-black/20 backdrop-blur-xl border border-white/30 rounded-full p-2 flex items-center justify-between transform-gpu"
+          className="glass-premium rounded-full p-2 flex items-center justify-between transform-gpu"
           style={{ 
-            WebkitBackdropFilter: "blur(24px)",
-            backfaceVisibility: "hidden"
+            backdropFilter: "blur(40px) saturate(180%)",
+            WebkitBackdropFilter: "blur(40px) saturate(180%)"
           }}
         >
           {/* Logo */}
@@ -49,7 +63,7 @@ export function Navbar() {
               alt={SITE_NAME}
               width={130}
               height={32}
-              className="h-8 w-auto object-contain brightness-0 invert"
+              className={cn("h-8 w-auto object-contain transition-all duration-300", logoInvert)}
               priority
             />
           </Link>
@@ -60,7 +74,10 @@ export function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-xs font-semibold text-white hover:opacity-80 transition-opacity duration-200 cursor-pointer tracking-wider uppercase"
+                className={cn(
+                  "text-sm font-semibold transition-colors duration-200 cursor-pointer tracking-[0.2em] uppercase hover:text-accent",
+                  textColor
+                )}
               >
                 {link.name}
               </Link>
@@ -70,7 +87,7 @@ export function Navbar() {
           {/* Action Button */}
           <div className="hidden md:block">
             <Link href={ZOMATO_URL} target="_blank" rel="noopener noreferrer">
-              <Button variant="primary" className="rounded-full">
+              <Button variant="primary" className="rounded-full shadow-lg hover:shadow-primary/20 transition-all">
                 Order Now
                 <MdArrowForward className="w-4 h-4" />
               </Button>
@@ -82,7 +99,10 @@ export function Navbar() {
             onClick={() => setIsOpen(!isOpen)}
             variant="none"
             size="none"
-            className="md:hidden p-2 text-white hover:text-primary transition-colors cursor-pointer"
+            className={cn(
+              "md:hidden p-2 transition-colors cursor-pointer",
+              textColor
+            )}
             aria-label="Toggle menu"
           >
             {isOpen ? <MdClose size={24} /> : <MdMenu size={24} />}
