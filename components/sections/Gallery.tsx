@@ -33,7 +33,7 @@ export function Gallery() {
           badge="Gallery"
           title="A Feast for the"
           highlight="Eyes"
-          description="Every dish is a visual masterpiece — crafted to delight all your senses."
+          description="Every dish is a visual masterpiece - crafted to delight all your senses."
         />
 
         {/* Bento Grid - Exactly 2 Rows */}

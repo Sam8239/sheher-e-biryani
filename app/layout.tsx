@@ -15,25 +15,27 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: `${SITE_NAME} | Authentic Dum Biryani — Order on Zomato`,
+    default: `${SITE_NAME} | Authentic Matka Dum Biryani in Noida | Order Online`,
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
   keywords: [
-    "biryani",
-    "dum biryani",
-    "Hyderabadi biryani",
-    "biryani delivery Noida",
-    "best biryani Noida",
     "Sheher-e-Biryani",
-    "chicken biryani",
+    "premium biryani Noida",
+    "biryani delivery Noida",
+    "matka biryani Noida",
+    "authentic dum biryani",
+    "Hyderabadi biryani",
+    "chicken dum biryani",
     "mutton biryani",
     "biryani near me",
-    "order biryani online",
-    "authentic biryani",
-    "dum pukht",
-    "Mughlai food",
-    "kebabs Noida",
+    "order biryani online Zomato",
+    "authentic biryani Sector 41 Noida",
+    "Aghapur biryani",
+    "dum pukht biryani",
+    "Mughlai food Noida",
+    "top rated biryani Noida",
+    "handi biryani delivery",
   ],
   authors: [{ name: SITE_NAME }],
   creator: SITE_NAME,
@@ -61,7 +63,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: `${SITE_NAME} | Authentic Dum Biryani`,
+    title: `${SITE_NAME} | Authentic Matka Dum Biryani in Noida | Order Online`,
     description: SITE_DESCRIPTION,
     images: [
       {
@@ -75,7 +77,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} | Authentic Dum Biryani`,
+    title: `${SITE_NAME} | Authentic Matka Dum Biryani in Noida | Order Online`,
     description: SITE_DESCRIPTION,
     images: ["/og-image.png"],
   },

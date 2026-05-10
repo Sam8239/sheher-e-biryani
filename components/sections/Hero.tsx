@@ -51,7 +51,7 @@ export function Hero() {
                   className="absolute inset-0 rounded-full glass-premium z-[-1]" 
                   style={{ backdropFilter: "blur(40px) saturate(180%)", WebkitBackdropFilter: "blur(40px) saturate(180%)" }}
                 />
-                Authentic Dum Pukht Biryani
+                Authentic Biryani in Noida
               </span>
             </motion.div>
 
@@ -72,8 +72,7 @@ export function Hero() {
               variants={fadeUp}
               className="mt-6 text-lg md:text-xl text-white max-w-xl mx-auto leading-relaxed mb-10 font-medium"
             >
-              Slow-cooked with premium spices in sealed clay matkas.
-              Every grain tells a story of heritage and craft.
+              Experience authentic Matka Dum Biryani in Noida. Slow-cooked with premium spices in sealed clay handis, delivering royal flavours directly to you.
             </motion.p>
 
             {/* CTAs */}

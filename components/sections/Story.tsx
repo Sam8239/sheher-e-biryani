@@ -76,13 +76,13 @@ export function Story() {
               highlight="Flavour & Fire"
               highlightOnNewLine
               centered={false}
-              className="mb-0"
+              className="mb-5"
             />
 
             <div className="space-y-4 text-muted leading-relaxed">
               <p>
-                At Sheher-e-Biryani, we believe biryani is not just a dish — it
-                is an art form passed down through generations. Our recipes are
+                At Sheher-e-Biryani, we believe biryani is not just a dish - it
+                is an art form passed down through generations. Bringing the most authentic flavours to Noida, our recipes are
                 rooted in the royal kitchens of Hyderabad and Lucknow, where
                 every pot tells a story of patience, precision, and passion.
               </p>
@@ -91,15 +91,15 @@ export function Story() {
                 <span className="text-foreground font-semibold">
                   dum pukht technique
                 </span>
-                — sealing marinated meat and aged basmati rice in copper handis,
+                - sealing marinated meat and aged basmati rice in copper handis,
                 slow-cooking over a gentle flame until every grain absorbs the
-                essence of saffron, whole spices, and aromatic herbs.
+                essence of saffron, whole spices, and aromatic herbs. It is this dedication that makes us a trusted choice for premium biryani delivery in Sector 41 and beyond.
               </p>
               <p>
-                Our spices are sourced directly from farms across India — Kashmir
+                Our spices are sourced directly from farms across India - Kashmir
                 saffron, Malabar peppercorns, and Rajasthani red chillies. No
                 artificial colours. No shortcuts. Just pure, unadulterated
-                flavour.
+                flavour delivered to your doorstep.
               </p>
             </div>
 
