@@ -7,26 +7,23 @@ import { Button } from "@/components/ui/button";
 import { MdArrowForward } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
 import { ZOMATO_URL } from "@/constants/site";
-import { WHATSAPP_PHONE_HREF } from "@/constants/contact";
+import { WHATSAPP_PHONE_HREF, WHATSAPP_MESSAGE } from "@/constants/contact";
 
 export function OrderCTA() {
-  const whatsappMessage = encodeURIComponent(
-    "Hi Sheher-e-Biryani! I'd like to place an order. Please share the menu details."
-  );
-  const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE_HREF}?text=${whatsappMessage}`;
+  const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE_HREF}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
   return (
     <section className="relative py-28 md:py-36 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1642821373181-696a54913e93?w=1920&h=800&fit=crop&q=80"
-          alt="Biryani background"
+          src="/matka-biryani-hero.png"
+          alt="Authentic matka biryani"
           fill
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/70 to-black/80" />
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-md" />
       </div>
 
       {/* Content */}
@@ -36,14 +33,16 @@ export function OrderCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="max-w-2xl mx-auto"
+          className="max-w-2xl mx-auto transform-gpu"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white tracking-tight leading-tight mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white tracking-tight leading-tight mb-6 drop-shadow-2xl">
             Ready to Experience
             <br />
-            <span className="text-accent">Sheher-e-Biryani?</span>
+            <span className="bg-linear-to-r from-accent to-accent-light bg-clip-text text-transparent">
+              Sheher-e-Biryani?
+            </span>
           </h2>
-          <p className="text-white/60 text-lg mb-10 max-w-lg mx-auto">
+          <p className="text-white/90 text-lg mb-10 max-w-lg mx-auto font-medium drop-shadow-lg">
             Order directly through Zomato for quick delivery, or reach out to us
             on WhatsApp for bulk orders and catering.
           </p>

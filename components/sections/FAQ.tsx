@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MdAdd, MdRemove } from "react-icons/md";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { faqs } from "@/constants/faq";
 
@@ -26,45 +27,69 @@ export function FAQ() {
             className="mb-14"
           />
 
-          {/* Accordion */}
-          <div className="space-y-3">
+          {/* Individual Glass Cards Accordion with Synced Animations */}
+          <div className="space-y-4">
             {faqs.map((faq, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 10 }}
+                layout
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ backgroundColor: "rgba(0, 0, 0, 0.07)" }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.05, duration: 0.3 }}
-                className="rounded-xl border border-border bg-surface overflow-hidden"
+                transition={{ 
+                  delay: i * 0.05, 
+                  type: "spring", 
+                  stiffness: 300, 
+                  damping: 30 
+                }}
+                className="rounded-2xl glass-premium overflow-hidden transform-gpu border border-black/5 shadow-sm"
+                style={{ 
+                  backgroundColor: "rgba(0, 0, 0, 0.05)",
+                  backdropFilter: "blur(40px) saturate(180%)",
+                  WebkitBackdropFilter: "blur(40px) saturate(180%)"
+                }}
               >
                 <button
                   onClick={() => toggle(i)}
-                  className="w-full flex items-center justify-between p-3 text-left cursor-pointer group"
+                  className="w-full flex items-center justify-between p-4 text-left cursor-pointer group outline-hidden"
                   aria-expanded={openIndex === i}
                 >
-                  <span className="text-base font-semibold text-foreground group-hover:text-primary transition-colors duration-200 pr-4">
+                  <span className={cn(
+                    "text-base font-bold transition-colors duration-300 pr-4",
+                    openIndex === i ? "text-primary" : "text-foreground/90 group-hover:text-primary"
+                  )}>
                     {faq.question}
                   </span>
-                  <span className="shrink-0 w-7 h-7 rounded-full bg-primary/5 border border-primary/10 flex items-center justify-center text-primary">
-                    {openIndex === i ? (
-                      <MdRemove className="w-4 h-4" />
-                    ) : (
-                      <MdAdd className="w-4 h-4" />
-                    )}
-                  </span>
+                  <motion.div 
+                    animate={{ 
+                      rotate: openIndex === i ? 180 : 0,
+                      borderColor: openIndex === i ? "rgba(123, 31, 31, 0.3)" : "rgba(0, 0, 0, 0.05)",
+                      color: openIndex === i ? "rgba(123, 31, 31, 1)" : "rgba(0, 0, 0, 0.4)",
+                      backgroundColor: openIndex === i ? "rgba(123, 31, 31, 0.1)" : "rgba(0, 0, 0, 0.02)"
+                    }}
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    className="shrink-0 w-10 h-10 rounded-full border flex items-center justify-center"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M6 9l6 6 6-6" />
+                    </svg>
+                  </motion.div>
                 </button>
 
-                <AnimatePresence>
+                <AnimatePresence initial={false}>
                   {openIndex === i && (
                     <motion.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25, ease: "easeInOut" }}
-                      className="overflow-hidden"
+                      transition={{ 
+                        height: { type: "spring", stiffness: 300, damping: 30 },
+                        opacity: { duration: 0.2 }
+                      }}
                     >
-                      <div className="px-6 pb-5">
-                        <p className="text-sm text-muted leading-relaxed">
+                      <div className="p-4 border-t border-black/3">
+                        <p className="text-base text-muted/80 leading-relaxed font-medium max-w-2xl">
                           {faq.answer}
                         </p>
                       </div>

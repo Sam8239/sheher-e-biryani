@@ -1,16 +1,15 @@
 /** Central site configuration for Sheher-e-Biryani */
 
-export const SITE_NAME = "Sheher-e-Biryani";
-export const SITE_TAGLINE = "The Art of Authentic Biryani";
-export const SITE_DESCRIPTION =
-  "Experience the royal taste of authentic dum biryani, slow-cooked with premium spices and served with love. Order now on Zomato.";
-export const SITE_URL = "https://www.sheher-e-biryani.com";
+export const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME!;
+export const SITE_TAGLINE = process.env.NEXT_PUBLIC_SITE_TAGLINE!;
+export const SITE_DESCRIPTION = process.env.NEXT_PUBLIC_SITE_DESCRIPTION!;
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL!;
 
-/** Zomato ordering link — update with actual URL */
-export const ZOMATO_URL = "https://www.zomato.com/sheher-e-biryani";
+/** Zomato ordering link */
+export const ZOMATO_URL = process.env.NEXT_PUBLIC_ZOMATO_URL!;
 
-/** Social media links — update with actual URLs */
+/** Social media links */
 export const SOCIAL_LINKS = {
-  instagram: "https://www.instagram.com/sheher_e_biryani",
-  facebook: "https://www.facebook.com/sheherebiryani",
+  instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL!,
+  facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL!,
 } as const;

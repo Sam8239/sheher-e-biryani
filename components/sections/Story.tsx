@@ -51,11 +51,11 @@ export function Story() {
 
             {/* Floating badge */}
             <div className="absolute bottom-6 left-6 right-6">
-              <div className="bg-background/90 backdrop-blur-sm rounded-2xl p-4 border border-border">
-                <p className="text-xs text-muted uppercase tracking-wider font-medium mb-1">
+              <div className="rounded-2xl p-4 border border-border glass-premium backdrop-blur-sm">
+                <p className="text-xs text-white uppercase tracking-wider font-medium mb-1">
                   Our Promise
                 </p>
-                <p className="text-sm font-semibold text-foreground">
+                <p className="text-sm font-semibold text-white/80">
                   100% Fresh. No shortcuts. No compromise.
                 </p>
               </div>
