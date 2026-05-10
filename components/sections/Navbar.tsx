@@ -63,7 +63,7 @@ export function Navbar() {
               alt={SITE_NAME}
               width={130}
               height={32}
-              className={cn("h-8 w-auto object-contain transition-all duration-300", logoInvert)}
+              className={cn("h-7 md:h-8 w-auto object-contain transition-all duration-300", logoInvert)}
               priority
             />
           </Link>
@@ -116,23 +116,36 @@ export function Navbar() {
               initial={{ opacity: 0, y: 10, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 10, scale: 0.95 }}
-              transition={{ duration: 0.2 }}
-              className="absolute top-16 left-0 right-0 p-4 md:hidden pointer-events-none"
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="absolute top-[calc(100%+0.5rem)] left-0 right-0 md:hidden pointer-events-none"
             >
-              <div className="bg-black/80 backdrop-blur-xl border border-white/20 p-6 shadow-2xl pointer-events-auto flex flex-col gap-4 rounded-3xl">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className="text-base font-semibold text-white hover:text-primary transition-colors py-2"
-                  >
-                    {link.name}
-                  </Link>
-                ))}
+              <div 
+                className="glass-premium p-4 pointer-events-auto flex flex-col gap-4 rounded-3xl border-white/20"
+                style={{ 
+                  backdropFilter: "blur(40px) saturate(180%)",
+                  WebkitBackdropFilter: "blur(40px) saturate(180%)"
+                }}
+              >
+                <div className="flex flex-col gap-2">
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className={cn(
+                        "text-sm font-semibold transition-all duration-200 cursor-pointer tracking-[0.2em] uppercase py-2 hover:text-accent flex justify-center group",
+                        textColor
+                      )}
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                </div>
+                
                 <Link href={ZOMATO_URL} target="_blank" rel="noopener noreferrer" className="mt-2">
-                  <Button variant="primary" className="w-full">
-                    Order on Zomato
+                  <Button variant="primary" className="w-full rounded-2xl py-6 text-sm tracking-widest uppercase">
+                    Order Now
+                    <MdArrowForward className="w-4 h-4" />
                   </Button>
                 </Link>
               </div>

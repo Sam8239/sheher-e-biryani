@@ -69,13 +69,13 @@ export function Footer() {
 
             {/* CTA */}
             <div className="mt-6 flex flex-col sm:flex-row gap-3">
-              <Link href={ZOMATO_URL} target="_blank" rel="noopener noreferrer">
-                <Button variant="accent">
+              <Link href={ZOMATO_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                <Button variant="accent" className="w-full">
                   Order on Zomato
                 </Button>
               </Link>
-              <Link href={GOOGLE_BUSINESS_URL} target="_blank" rel="noopener noreferrer">
-                <Button>
+              <Link href={GOOGLE_BUSINESS_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                <Button className="w-full">
                   Review on Google
                 </Button>
               </Link>
@@ -160,8 +160,8 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-border py-6">
-          <p className="text-xs text-muted/50 text-center">
+        <div className="border-t border-border py-4">
+          <p className="text-xs text-primary text-center">
             © {currentYear} {SITE_NAME}. All rights reserved.
           </p>
         </div>

@@ -27,7 +27,7 @@ export function FAQ() {
             className="mb-14"
           />
 
-          {/* Individual Glass Cards Accordion with Synced Animations */}
+          {/* Accordion items with border and background hierarchy */}
           <div className="space-y-4">
             {faqs.map((faq, i) => (
               <motion.div
@@ -35,7 +35,7 @@ export function FAQ() {
                 layout
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ backgroundColor: "rgba(0, 0, 0, 0.07)" }}
+                whileHover={{ backgroundColor: "var(--color-background)" }}
                 viewport={{ once: true }}
                 transition={{ 
                   delay: i * 0.05, 
@@ -43,12 +43,7 @@ export function FAQ() {
                   stiffness: 300, 
                   damping: 30 
                 }}
-                className="rounded-2xl glass-premium overflow-hidden transform-gpu border border-black/5 shadow-sm"
-                style={{ 
-                  backgroundColor: "rgba(0, 0, 0, 0.05)",
-                  backdropFilter: "blur(40px) saturate(180%)",
-                  WebkitBackdropFilter: "blur(40px) saturate(180%)"
-                }}
+                className="rounded-2xl bg-surface border border-border overflow-hidden transform-gpu"
               >
                 <button
                   onClick={() => toggle(i)}
@@ -64,9 +59,9 @@ export function FAQ() {
                   <motion.div 
                     animate={{ 
                       rotate: openIndex === i ? 180 : 0,
-                      borderColor: openIndex === i ? "rgba(123, 31, 31, 0.3)" : "rgba(0, 0, 0, 0.05)",
-                      color: openIndex === i ? "rgba(123, 31, 31, 1)" : "rgba(0, 0, 0, 0.4)",
-                      backgroundColor: openIndex === i ? "rgba(123, 31, 31, 0.1)" : "rgba(0, 0, 0, 0.02)"
+                      borderColor: openIndex === i ? "var(--color-primary)" : "var(--color-border)",
+                      color: openIndex === i ? "var(--color-primary)" : "var(--color-muted)",
+                      backgroundColor: openIndex === i ? "var(--color-surface)" : "transparent"
                     }}
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     className="shrink-0 w-10 h-10 rounded-full border flex items-center justify-center"
@@ -88,7 +83,7 @@ export function FAQ() {
                         opacity: { duration: 0.2 }
                       }}
                     >
-                      <div className="p-4 border-t border-black/3">
+                      <div className="p-4 border-t border-border">
                         <p className="text-base text-muted/80 leading-relaxed font-medium max-w-2xl">
                           {faq.answer}
                         </p>
