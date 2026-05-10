@@ -24,7 +24,7 @@ export function Footer() {
     <footer className="bg-surface text-muted relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         {/* Main Content */}
-        <div className="pt-16 pb-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="py-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -35,51 +35,54 @@ export function Footer() {
           >
             <Link href="/" className="inline-block">
               <Image
-                src="/logo-large.png"
+                src="/logo-large-vertical.png"
                 alt={SITE_NAME}
-                width={180}
-                height={48}
-                className="h-12 w-auto object-contain"
-                style={{ width: "auto" }}
+                width={160}
+                height={160}
+                className="h-32 w-auto object-contain"
+                style={{ width: "auto", height: "auto" }}
               />
             </Link>
-            <p className="mt-3 text-muted/70 leading-relaxed max-w-sm mx-auto lg:mx-0">
+            <p className="mt-3 text-primary/60 leading-relaxed max-w-md mx-auto lg:mx-0">
               Authentic dum pukht biryani crafted with premium spices and served
               with love. Experience the royal taste of tradition.
             </p>
 
-            {/* Social Links */}
-            <div className="flex justify-center lg:justify-start gap-3 mt-6">
-              {[
-                { icon: <FaInstagram className="w-4 h-4" />, href: SOCIAL_LINKS.instagram, label: "Instagram" },
-                { icon: <FaFacebookF className="w-4 h-4" />, href: SOCIAL_LINKS.facebook, label: "Facebook" },
-                { icon: <FaWhatsapp className="w-4 h-4" />, href: whatsappUrl, label: "WhatsApp" },
-              ].map((social) => (
-                <Link
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.label}
-                  className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted hover:text-primary hover:border-primary/30 transition-colors duration-200 cursor-pointer"
-                >
-                  {social.icon}
-                </Link>
-              ))}
-            </div>
+            {/* Links and CTA Wrapper */}
+            <div className="mt-8 flex flex-col lg:flex-row items-center gap-8">
+              {/* Social Links */}
+              <div className="flex gap-3">
+                {[
+                  { icon: <FaInstagram className="w-4 h-4" />, href: SOCIAL_LINKS.instagram, label: "Instagram" },
+                  { icon: <FaFacebookF className="w-4 h-4" />, href: SOCIAL_LINKS.facebook, label: "Facebook" },
+                  { icon: <FaWhatsapp className="w-4 h-4" />, href: whatsappUrl, label: "WhatsApp" },
+                ].map((social) => (
+                  <Link
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted hover:text-primary hover:border-primary/30 transition-colors duration-200 cursor-pointer"
+                  >
+                    {social.icon}
+                  </Link>
+                ))}
+              </div>
 
-            {/* CTA */}
-            <div className="mt-6 flex flex-col sm:flex-row gap-3">
-              <Link href={ZOMATO_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                <Button variant="accent" className="w-full">
-                  Order on Zomato
-                </Button>
-              </Link>
-              <Link href={GOOGLE_BUSINESS_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
-                <Button className="w-full">
-                  Review on Google
-                </Button>
-              </Link>
+              {/* CTA */}
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link href={ZOMATO_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                  <Button variant="accent" className="w-full">
+                    Order on Zomato
+                  </Button>
+                </Link>
+                <Link href={GOOGLE_BUSINESS_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                  <Button className="w-full">
+                    Review on Google
+                  </Button>
+                </Link>
+              </div>
             </div>
           </motion.div>
 

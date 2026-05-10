@@ -102,7 +102,7 @@ export function Menu() {
                     <div className="flex items-center gap-2 mb-1">
                       {/* Veg / Non-Veg indicator */}
                       <span
-                        className={`w-4 h-4 rounded-sm border-2 flex items-center justify-center shrink-0 ${
+                        className={`w-4 h-4 rounded-full border-2 flex items-center justify-center shrink-0 ${
                           menuItem.isVeg
                             ? "border-green-600"
                             : "border-red-600"

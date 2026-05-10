@@ -35,7 +35,7 @@ export function OrderCTA() {
           transition={{ duration: 0.5 }}
           className="max-w-2xl mx-auto transform-gpu"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white tracking-tight leading-tight mb-6 drop-shadow-2xl">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-white tracking-tight leading-tight mb-6 drop-shadow-2xl">
             Ready to Experience
             <br />
             <span className="text-accent text-shadow-xs text-shadow-black">

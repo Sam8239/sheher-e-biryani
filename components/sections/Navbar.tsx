@@ -64,7 +64,7 @@ export function Navbar() {
               width={130}
               height={32}
               className={cn("h-7 md:h-8 w-auto object-contain transition-all duration-300", logoInvert)}
-              style={{ width: "auto" }}
+              style={{ width: "auto"}}
               priority
             />
           </Link>
