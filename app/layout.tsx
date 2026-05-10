@@ -83,6 +83,9 @@ export const metadata: Metadata = {
   },
 
   metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: "/",
+  },
   applicationName: SITE_NAME,
 
   appleWebApp: {
