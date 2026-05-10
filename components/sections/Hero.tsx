@@ -52,7 +52,7 @@ export function Hero() {
             >
               The Art of
               <br />
-              <span className="text-primary">Authentic Biryani</span>
+              <span className="text-primary text-shadow-sm text-shadow-white">Authentic Biryani</span>
             </motion.h1>
 
             {/* Subheading */}
