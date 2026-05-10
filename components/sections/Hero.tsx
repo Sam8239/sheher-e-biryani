@@ -15,10 +15,10 @@ export function Hero() {
     visible: (i: number) => ({
       opacity: 1,
       y: 0,
-      transition: { 
-        delay: i * 0.1, 
-        duration: i === 0 ? 0.3 : 0.6, 
-        ease: "easeOut" as const 
+      transition: {
+        delay: i * 0.1,
+        duration: i === 0 ? 0.3 : 0.6,
+        ease: "easeOut" as const
       },
     }),
   };
@@ -48,7 +48,7 @@ export function Hero() {
             <motion.h1
               custom={1}
               variants={fadeUp}
-              className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tight leading-[1.1] mb-6 text-white"
+              className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tight leading-[1.1] mb-6 text-white"
             >
               The Art of
               <br />
