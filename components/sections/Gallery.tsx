@@ -26,7 +26,7 @@ export function Gallery() {
     },
   };
   return (
-    <section id="gallery" className="py-24 md:py-32 bg-background">
+    <section id="gallery" className="py-16 md:py-32 bg-background">
       <div className="container mx-auto px-6 md:px-12">
         {/* Header */}
         <SectionHeading

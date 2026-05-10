@@ -16,7 +16,7 @@ export function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-24 md:py-32 bg-background">
+    <section id="faq" className="py-16 md:py-32 bg-background">
       <div className="container mx-auto px-6 md:px-12">
         <div className="max-w-3xl mx-auto">
           {/* Header */}

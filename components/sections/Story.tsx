@@ -29,7 +29,7 @@ export function Story() {
     },
   };
   return (
-    <section id="story" className="py-24 md:py-32 bg-background">
+    <section id="story" className="py-16 md:py-32 bg-background">
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image */}
@@ -68,7 +68,7 @@ export function Story() {
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
             variants={fadeInRight}
-            className="space-y-6"
+            className="space-y-6 flex flex-col items-center lg:items-start text-center lg:text-left"
           >
             <SectionHeading
               badge="Our Story"
@@ -76,10 +76,10 @@ export function Story() {
               highlight="Flavour & Fire"
               highlightOnNewLine
               centered={false}
-              className="mb-5"
+              className="mb-5 text-center lg:text-left"
             />
 
-            <div className="space-y-4 text-muted leading-relaxed">
+            <div className="space-y-4 text-muted leading-relaxed text-center lg:text-left">
               <p>
                 At Sheher-e-Biryani, we believe biryani is not just a dish - it
                 is an art form passed down through generations. Bringing the most authentic flavours to Noida, our recipes are
@@ -104,7 +104,7 @@ export function Story() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-4">
+            <div className="flex gap-10 md:gap-16 pt-4 justify-center lg:justify-start">
               {[
                 { value: "100%", label: "Fresh Ingredients" },
                 { value: "Dum", label: "Pukht Technique" },

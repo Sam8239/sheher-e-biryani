@@ -28,7 +28,7 @@ export function Menu() {
   };
 
   return (
-    <section id="menu" className="py-24 md:py-32 bg-surface">
+    <section id="menu" className="py-16 md:py-32 bg-surface">
       <div className="container mx-auto px-6 md:px-12">
         {/* Header */}
         <SectionHeading

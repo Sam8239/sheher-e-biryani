@@ -13,7 +13,7 @@ export function OrderCTA() {
   const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE_HREF}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
   return (
-    <section className="relative py-28 md:py-36 overflow-hidden">
+    <section className="relative py-20 md:py-32 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -23,7 +23,7 @@ export function OrderCTA() {
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-md" />
+        <div className="absolute inset-0 glass-premium backdrop-blur-[3px] backdrop-brightness-80" />
       </div>
 
       {/* Content */}
@@ -38,7 +38,7 @@ export function OrderCTA() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white tracking-tight leading-tight mb-6 drop-shadow-2xl">
             Ready to Experience
             <br />
-            <span className="bg-linear-to-r from-accent to-accent-light bg-clip-text text-transparent">
+            <span className="text-accent text-shadow-xs text-shadow-black">
               Sheher-e-Biryani?
             </span>
           </h2>
