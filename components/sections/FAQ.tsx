@@ -61,7 +61,7 @@ export function FAQ() {
                       rotate: openIndex === i ? 180 : 0,
                       borderColor: openIndex === i ? "var(--color-primary)" : "var(--color-border)",
                       color: openIndex === i ? "var(--color-primary)" : "var(--color-muted)",
-                      backgroundColor: openIndex === i ? "var(--color-surface)" : "transparent"
+                      backgroundColor: openIndex === i ? "var(--color-surface)" : "rgba(0, 0, 0, 0)"
                     }}
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     className="shrink-0 w-10 h-10 rounded-full border flex items-center justify-center"

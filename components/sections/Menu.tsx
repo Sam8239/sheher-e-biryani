@@ -39,7 +39,7 @@ export function Menu() {
         />
 
         {/* Category Tabs */}
-        <div className="flex justify-center gap-2 mb-12 overflow-x-auto pb-2">
+        <div className="flex justify-start md:justify-center gap-2 mb-12 overflow-x-auto pb-2 no-scrollbar px-6 -mx-6 md:px-0 md:mx-0">
           {menuCategories.map((cat, i) => (
             <Button
               key={cat.name}

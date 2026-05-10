@@ -37,24 +37,13 @@ export function Hero() {
       </div>
 
       {/* Content Overlay */}
-      <div className="absolute inset-0 z-20 flex items-center justify-center glass-premium backdrop-blur-sm" >
+      <div className="absolute inset-0 z-20 flex items-center justify-center glass-premium backdrop-blur-[3px]" >
         <div className="container mx-auto px-6 md:px-12 text-center">
           <motion.div
             initial="hidden"
             animate="visible"
             className="max-w-3xl mx-auto"
           >
-            {/* Badge */}
-            <motion.div custom={0} variants={fadeUp} className="transform-gpu flex justify-center">
-              <span className="relative inline-flex items-center gap-3 px-5 py-2 rounded-full text-white text-xs font-bold tracking-[0.2em] uppercase mb-8 shadow-sm group">
-                <div 
-                  className="absolute inset-0 rounded-full glass-premium z-[-1]" 
-                  style={{ backdropFilter: "blur(40px) saturate(180%)", WebkitBackdropFilter: "blur(40px) saturate(180%)" }}
-                />
-                Authentic Biryani in Noida
-              </span>
-            </motion.div>
-
             {/* Heading */}
             <motion.h1
               custom={1}

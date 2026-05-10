@@ -31,7 +31,7 @@ export function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-2"
+            className="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left"
           >
             <Link href="/" className="inline-block">
               <Image
@@ -40,15 +40,16 @@ export function Footer() {
                 width={180}
                 height={48}
                 className="h-12 w-auto object-contain"
+                style={{ width: "auto" }}
               />
             </Link>
-            <p className="mt-3 text-muted/70 leading-relaxed max-w-sm">
+            <p className="mt-3 text-muted/70 leading-relaxed max-w-sm mx-auto lg:mx-0">
               Authentic dum pukht biryani crafted with premium spices and served
               with love. Experience the royal taste of tradition.
             </p>
 
             {/* Social Links */}
-            <div className="flex gap-3 mt-6">
+            <div className="flex justify-center lg:justify-start gap-3 mt-6">
               {[
                 { icon: <FaInstagram className="w-4 h-4" />, href: SOCIAL_LINKS.instagram, label: "Instagram" },
                 { icon: <FaFacebookF className="w-4 h-4" />, href: SOCIAL_LINKS.facebook, label: "Facebook" },
@@ -88,6 +89,7 @@ export function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
+            className="flex flex-col items-center md:items-start text-center md:text-left"
           >
             <h4 className="text-sm font-semibold text-foreground tracking-wide mb-5">
               Quick Links
@@ -128,6 +130,7 @@ export function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex flex-col items-center md:items-start text-center md:text-left"
           >
             <h4 className="text-sm font-semibold text-foreground tracking-wide mb-5">
               Contact
