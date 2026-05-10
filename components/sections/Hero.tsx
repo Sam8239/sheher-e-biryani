@@ -37,7 +37,7 @@ export function Hero() {
       </div>
 
       {/* Content Overlay */}
-      <div className="absolute inset-0 z-20 flex items-center justify-center glass-premium backdrop-blur-[3px]" >
+      <div className="absolute inset-0 z-20 flex items-center justify-center glass-premium backdrop-blur-[3px] backdrop-brightness-80" >
         <div className="container mx-auto px-6 md:px-12 text-center">
           <motion.div
             initial="hidden"
