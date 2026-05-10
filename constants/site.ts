@@ -8,6 +8,9 @@ export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL!;
 /** Zomato ordering link */
 export const ZOMATO_URL = process.env.NEXT_PUBLIC_ZOMATO_URL!;
 
+/** Google Business Review Link */
+export const GOOGLE_BUSINESS_URL = process.env.NEXT_PUBLIC_GOOGLE_BUSINESS_URL || '#';
+
 /** Social media links */
 export const SOCIAL_LINKS = {
   instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL!,

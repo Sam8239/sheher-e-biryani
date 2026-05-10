@@ -5,7 +5,7 @@ import { FaInstagram, FaFacebookF, FaWhatsapp } from "react-icons/fa";
 import { MdLocationOn, MdPhone, MdEmail } from "react-icons/md";
 import Link from "next/link";
 import Image from "next/image";
-import { SITE_NAME, ZOMATO_URL, SOCIAL_LINKS } from "@/constants/site";
+import { SITE_NAME, ZOMATO_URL, SOCIAL_LINKS, GOOGLE_BUSINESS_URL } from "@/constants/site";
 import {
   CONTACT_EMAIL,
   CONTACT_PHONE,
@@ -68,10 +68,15 @@ export function Footer() {
             </div>
 
             {/* CTA */}
-            <div className="mt-6">
+            <div className="mt-6 flex flex-col sm:flex-row gap-3">
               <Link href={ZOMATO_URL} target="_blank" rel="noopener noreferrer">
                 <Button variant="accent">
                   Order on Zomato
+                </Button>
+              </Link>
+              <Link href={GOOGLE_BUSINESS_URL} target="_blank" rel="noopener noreferrer">
+                <Button>
+                  Review on Google
                 </Button>
               </Link>
             </div>
